@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="button_width">100dp</dimen>
+    <dimen name="Button_Width2">140dp</dimen>
+    <dimen name="Edit_width">300dp</dimen>
+    <dimen name="Edit_height">50dp</dimen>
+</resources>
