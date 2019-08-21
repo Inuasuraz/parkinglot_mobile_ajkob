@@ -9,7 +9,7 @@
     <string name="Edit_Two">Name</string>
     <string name="Edit_Three">Phone</string>
 
-    <string name="Edit_Button">Edit</string>
+    <string name="Edit_Button">Update</string>
     <string name="Delete_Button">Delete</string>
 
 </resources>
