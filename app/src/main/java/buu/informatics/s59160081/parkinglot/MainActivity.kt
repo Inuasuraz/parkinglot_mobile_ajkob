@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.apply{
             ButtonUpdate.visibility = View.INVISIBLE
@@ -51,12 +52,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun update(view: View){
-        try {
-            val check_phone = parseDouble(Phone.text.toString())
 
-                if (Name.text.toString() in arrayOf("0", "1", "2", "3", "4", "5", "6", "7", "8", "9")){
-                    alert(4)
-                }else{
                     if (select == 1){
                         if (License.text.toString().replace("\\s".toRegex(), "").length < 1 &&
                             Name.text.toString().replace("\\s".toRegex(), "").length < 1 &&
@@ -95,10 +91,7 @@ class MainActivity : AppCompatActivity() {
                             alert(2)
                         }
                     }
-                }
-        } catch (e: NumberFormatException) {
-            alert(4)
-        }
+
     }
 
     private fun delete(view : View){

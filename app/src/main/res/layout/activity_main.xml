@@ -83,7 +83,7 @@
             android:layout_height="@dimen/Edit_height"
             android:ems="10"
             android:hint="@string/Edit_Three"
-            android:inputType="textPersonName"
+            android:inputType="phone"
             android:textAlignment="center"
             app:layout_constraintBottom_toTopOf="@+id/Button_Update"
             app:layout_constraintEnd_toEndOf="parent"
