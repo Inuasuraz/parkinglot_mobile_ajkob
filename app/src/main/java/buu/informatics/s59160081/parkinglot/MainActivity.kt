@@ -52,73 +52,68 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun update(view: View){
-            binding.apply{
-                if (select == 1){
-                    if (License.text.toString().replace("\\s".toRegex(), "").length < 1 &&
-                        Name.text.toString().replace("\\s".toRegex(), "").length < 1 &&
-                        Phone.text.toString().replace("\\s".toRegex(), "").length < 1){
-                        alert(1)
-                    }else{
-                        Lot_One.license = License.text.toString()
-                        Lot_One.name = Name.text.toString()
-                        Lot_One.phone = Phone.text.toString()
-                        binding.ButtonOne.setBackgroundColor(Color.parseColor("#c94f59"))
-                        alert(2)
-                    }
 
-                }else if (select == 2){
-                    if (License.text.toString().replace("\\s".toRegex(), "").length < 1 &&
-                        Name.text.toString().replace("\\s".toRegex(), "").length < 1 &&
-                        Phone.text.toString().replace("\\s".toRegex(), "").length < 1){
-                        alert(1)
-                    }else{
-                        Lot_Two.license = License.text.toString()
-                        Lot_Two.name = Name.text.toString()
-                        Lot_Two.phone = Phone.text.toString()
-                        binding.ButtonTwo.setBackgroundColor(Color.parseColor("#c94f59"))
-                        alert(2)
-                    }
-                }else if (select == 3){
-                    if (License.text.toString().replace("\\s".toRegex(), "").length < 1 &&
-                        Name.text.toString().replace("\\s".toRegex(), "").length < 1 &&
-                        Phone.text.toString().replace("\\s".toRegex(), "").length < 1){
-                        alert(1)
-                    }else{
-                        Lot_Three.license = License.text.toString()
-                        Lot_Three.name = Name.text.toString()
-                        Lot_Three.phone = Phone.text.toString()
-                        binding.ButtonThree.setBackgroundColor(Color.parseColor("#c94f59"))
-                        alert(2)
-                    }
-                }
-            }
+                    if (select == 1){
+                        if (License.text.toString().replace("\\s".toRegex(), "").length < 1 &&
+                            Name.text.toString().replace("\\s".toRegex(), "").length < 1 &&
+                            Phone.text.toString().replace("\\s".toRegex(), "").length < 1){
+                            alert(1)
+                        }else{
+                            Lot_One.license = License.text.toString()
+                            Lot_One.name = Name.text.toString()
+                            Lot_One.phone = Phone.text.toString()
+                            binding.ButtonOne.setBackgroundColor(Color.parseColor("#c94f59"))
+                            alert(2)
+                        }
 
+                    }else if (select == 2){
+                        if (License.text.toString().replace("\\s".toRegex(), "").length < 1 &&
+                            Name.text.toString().replace("\\s".toRegex(), "").length < 1 &&
+                            Phone.text.toString().replace("\\s".toRegex(), "").length < 1){
+                            alert(1)
+                        }else{
+                            Lot_Two.license = License.text.toString()
+                            Lot_Two.name = Name.text.toString()
+                            Lot_Two.phone = Phone.text.toString()
+                            binding.ButtonTwo.setBackgroundColor(Color.parseColor("#c94f59"))
+                            alert(2)
+                        }
+                    }else if (select == 3){
+                        if (License.text.toString().replace("\\s".toRegex(), "").length < 1 &&
+                            Name.text.toString().replace("\\s".toRegex(), "").length < 1 &&
+                            Phone.text.toString().replace("\\s".toRegex(), "").length < 1){
+                            alert(1)
+                        }else{
+                            Lot_Three.license = License.text.toString()
+                            Lot_Three.name = Name.text.toString()
+                            Lot_Three.phone = Phone.text.toString()
+                            binding.ButtonThree.setBackgroundColor(Color.parseColor("#c94f59"))
+                            alert(2)
+                        }
+                    }
 
     }
 
     private fun delete(view : View){
-        binding.apply{
-            if (select == 1){
-                Lot_One.license = ""
-                Lot_One.name = ""
-                Lot_One.phone = ""
-                show(1)
-                alert(3)
-            }else if (select == 2){
-                Lot_Two.license = ""
-                Lot_Two.name = ""
-                Lot_Two.phone = ""
-                show(2)
-                alert(3)
-            }else if (select == 3){
-                Lot_Three.license = ""
-                Lot_Three.name = ""
-                Lot_Three.phone = ""
-                show(3)
-                alert(3)
-            }
+        if (select == 1){
+            Lot_One.license = ""
+            Lot_One.name = ""
+            Lot_One.phone = ""
+            show(1)
+            alert(3)
+        }else if (select == 2){
+            Lot_Two.license = ""
+            Lot_Two.name = ""
+            Lot_Two.phone = ""
+            show(2)
+            alert(3)
+        }else if (select == 3){
+            Lot_Three.license = ""
+            Lot_Three.name = ""
+            Lot_Three.phone = ""
+            show(3)
+            alert(3)
         }
-
     }
 
     private fun show(lot : Int){
@@ -184,25 +179,22 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun alert(operation : Int){
-        binding.apply{
-            val dialogBuilder= AlertDialog.Builder(this@MainActivity)
-            if (operation == 1){
-                dialogBuilder.setTitle("Alert")
-                dialogBuilder.setMessage("Please fill up all the box")
-                dialogBuilder.setPositiveButton("Close"){ dialogInterface: DialogInterface, i: Int -> Unit }
-                dialogBuilder.create().show()
-            }else if (operation == 2){
-                Toast.makeText(this@MainActivity,"Update complete",Toast.LENGTH_LONG).show()
-            }else if (operation == 3){
-                Toast.makeText(this@MainActivity,"Delete complete",Toast.LENGTH_LONG).show()
-            }else if (operation == 4){
-                dialogBuilder.setTitle("Alert")
-                dialogBuilder.setMessage("Please fill up correct informations")
-                dialogBuilder.setPositiveButton("Close"){ dialogInterface: DialogInterface, i: Int -> Unit }
-                dialogBuilder.create().show()
-            }
+        val dialogBuilder= AlertDialog.Builder(this)
+        if (operation == 1){
+            dialogBuilder.setTitle("Alert")
+            dialogBuilder.setMessage("Please fill up all the box")
+            dialogBuilder.setPositiveButton("Close"){ dialogInterface: DialogInterface, i: Int -> Unit }
+            dialogBuilder.create().show()
+        }else if (operation == 2){
+                Toast.makeText(this,"Update complete",Toast.LENGTH_LONG).show()
+        }else if (operation == 3){
+                Toast.makeText(this,"Delete complete",Toast.LENGTH_LONG).show()
+        }else if (operation == 4){
+            dialogBuilder.setTitle("Alert")
+            dialogBuilder.setMessage("Please fill up correct informations")
+            dialogBuilder.setPositiveButton("Close"){ dialogInterface: DialogInterface, i: Int -> Unit }
+            dialogBuilder.create().show()
         }
-
 
     }
 
